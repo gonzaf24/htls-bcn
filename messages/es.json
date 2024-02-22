@@ -1,0 +1,51 @@
+{
+  "Index": {
+    "title": "Ejemplo de next-intl"
+  },
+  "IndexPage": {
+    "title": "Ejemplo de next-intl",
+    "description": "Este es un ejemplo básico que demuestra el uso de <code>next-intl</code> con el Router de Aplicaciones de Next.js. Intenta cambiar la configuración regional en la esquina superior derecha y observa cómo cambia el contenido."
+  },
+  "PathnamesPage": {
+    "title": "Nombres de ruta",
+    "description": "Los nombres de ruta también están internacionalizados."
+  },
+  "PostsPage": {
+    "title": "Publicaciones",
+    "description": "Aquí encontrarás una lista de publicaciones."
+  },
+  "Error": {
+    "title": "¡Algo salió mal!",
+    "description": "<p>Lamentablemente, hemos encontrado un error.</p><p>Puedes intentar <retry>recargar la página</retry> que estabas visitando.</p>"
+  },
+  "NotFoundPage": {
+    "title": "Página no encontrada",
+    "description": "Por favor, verifica la barra de direcciones del navegador o usa la navegación para ir a una página conocida."
+  },
+  "LocaleLayout": {
+    "title": "Ejemplo de next-intl"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} es {🇪🇸 Español} other {Desconocido}}"
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "pathnames": "Nombres de ruta",
+    "posts": "Publicaciones"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "title": "Documentos",
+        "description": "Obtén más información sobre next-intl en la documentación oficial.",
+        "href": "https://next-intl-docs.vercel.app/"
+      },
+      "source": {
+        "title": "Código fuente",
+        "description": "Explora el código fuente de este ejemplo en GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router"
+      }
+    }
+  }
+}
