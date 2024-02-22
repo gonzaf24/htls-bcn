@@ -1,7 +1,7 @@
 import './globals.css'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { generateStaticParams } from '../../config' // Importa la función generateStaticParams desde tu archivo de configuración
 import Navigation from '@/components/Navigation'
+import { generateStaticParams } from '@/config'
 
 export default async function LocaleLayout ({ children, params: { locale } }) {
   unstable_setRequestLocale(locale)
