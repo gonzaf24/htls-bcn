@@ -1,6 +1,6 @@
-import PageLayout from '@/components/PageLayout'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
+import PageLayout from '../../../components/PageLayout'
 
 export default function PathnamesPage ({ params: { locale } }) {
   // Enable static rendering

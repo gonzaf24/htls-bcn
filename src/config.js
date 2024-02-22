@@ -17,7 +17,3 @@ export const pathnames = {
 export const localePrefix = undefined
 
 export const AppPathnames = Object.keys(pathnames)
-
-export function generateStaticParams () {
-  return locales.map((locale) => ({ locale }))
-}

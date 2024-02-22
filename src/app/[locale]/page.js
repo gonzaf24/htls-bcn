@@ -1,7 +1,9 @@
-import PageLayout from '@/components/PageLayout'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
+import PageLayout from '../../components/PageLayout'
 
 export default function Home ({ params: { locale } }) {
+  unstable_setRequestLocale(locale)
   const t = useTranslations('Index')
 
   return (
