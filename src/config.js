@@ -1,6 +1,6 @@
-const locales = ['es', 'en', 'de']
+export const locales = ['es', 'en', 'de']
 
-const pathnames = {
+export const pathnames = {
   '/': '/',
   '/pathnames': {
     es: '/nombres-ruta',
@@ -14,8 +14,10 @@ const pathnames = {
   }
 }
 
-const localePrefix = undefined
+export const localePrefix = undefined
 
-const AppPathnames = Object.keys(pathnames)
+export const AppPathnames = Object.keys(pathnames)
 
-module.exports = { locales, pathnames, localePrefix, AppPathnames }
+export function generateStaticParams () {
+  return locales.map((locale) => ({ locale }))
+}
