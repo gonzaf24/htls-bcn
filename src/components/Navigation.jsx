@@ -14,8 +14,10 @@ export default function Navigation () {
           <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink>
           <NavigationLink href="/posts">{t('posts')}</NavigationLink>
         </div>
-        <ThemeSwitcher />
-        <LocaleSwitcher />
+        <div className="flex justify-between">
+          <ThemeSwitcher />
+          <LocaleSwitcher />
+        </div>
       </nav>
     </div>
   )

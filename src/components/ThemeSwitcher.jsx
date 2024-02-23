@@ -27,13 +27,11 @@ export function ThemeSwitcher () {
     <div className="flex justify-center justify-items-center">
         <Switch
           onChange={toggleDarkMode}
-            defaultSelected
-            size="sm"
-            thumbIcon={({ isSelected, className }) =>
-              isSelected
-                ? <SunIcon className={className} />
-                : <MoonIcon className={className} />
-              }
+          size="sm"
+          isSelected={theme === 'light'}
+          color="danger"
+          startContent={<SunIcon />}
+          endContent={<MoonIcon />}
         />
     </div>
   )
