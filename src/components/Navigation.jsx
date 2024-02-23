@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from './ThemeSwitcher'
 import { useTranslations } from 'next-intl'
 import LocaleSwitcher from './LocaleSwitcher'
 import NavigationLink from './NavigationLink'
@@ -13,6 +14,7 @@ export default function Navigation () {
           <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink>
           <NavigationLink href="/posts">{t('posts')}</NavigationLink>
         </div>
+        <ThemeSwitcher />
         <LocaleSwitcher />
       </nav>
     </div>

@@ -11,7 +11,7 @@ export default function NavigationLink ({
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'
   const isActive = pathname === href
 
-  const linkClassName = `inline-block px-2 py-3 transition-colors ${
+  const linkClassName = `text-cerise-red-500 inline-block px-2 py-3 transition-colors ${
     isActive ? 'text-white' : 'text-gray-400 hover:text-gray-200'
   }`
 
