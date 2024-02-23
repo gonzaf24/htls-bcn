@@ -3,7 +3,7 @@
 import { Link } from '../navigation'
 import { useSelectedLayoutSegment } from 'next/navigation'
 
-export default function NavigationLink ({ href, ...rest }) {
+export default function NavigationLink ({ href, onLinkClick, ...rest }) {
   const selectedLayoutSegment = useSelectedLayoutSegment()
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'
   const isActive = pathname === href
@@ -16,6 +16,7 @@ export default function NavigationLink ({ href, ...rest }) {
     <Link
       aria-current={isActive ? 'page' : undefined}
       className={linkClassName}
+      onClick={onLinkClick}
       href={href}
       {...rest}
     />

@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import PageLayout from '../../../components/PageLayout'
 
-export default function BarPage ({ params: { locale } }) {
+export default function PostsPage ({ params: { locale } }) {
   unstable_setRequestLocale(locale)
   const t = useTranslations('BarPage')
 

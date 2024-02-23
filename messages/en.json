@@ -45,11 +45,11 @@
     "locale": "{locale, select, en {🇺🇸 English} es {🇪🇸 Español} other {Unknown}}"
   },
   "NavBar": {
-    "home": "Map",
-    "food": "Food",
-    "bar": "Bar",
-    "entertainment": "Entertainment",
-    "tops": "Tops"
+    "/": "Map",
+    "/food": "Food",
+    "/bar": "Bar",
+    "/entertainment": "Entertainment",
+    "/tops": "Tops"
   },
   "PageLayout": {
     "links": {

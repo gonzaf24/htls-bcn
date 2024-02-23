@@ -2,6 +2,10 @@ export const locales = ['es', 'en']
 
 export const pathnames = {
   '/': '/',
+  '/food': {
+    es: '/comida',
+    en: '/food'
+  },
   '/bar': {
     es: '/bar',
     en: '/bar'
@@ -9,10 +13,6 @@ export const pathnames = {
   '/entertainment': {
     es: '/entretenimiento',
     en: '/entertainment'
-  },
-  '/food': {
-    es: '/comida',
-    en: '/food'
   },
   '/tops': {
     es: '/tops',

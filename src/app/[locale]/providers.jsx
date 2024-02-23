@@ -5,10 +5,10 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes'
 
 export default function Providers ({ children }) {
   return (
-    <NextUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme={'dark'}>
-        {children}
-      </NextThemesProvider>
-    </NextUIProvider>
+      <NextUIProvider>
+        <NextThemesProvider attribute="class" defaultTheme={'dark'}>
+            {children}
+        </NextThemesProvider>
+      </NextUIProvider>
   )
 }

@@ -1,6 +1,8 @@
+// import { useTranslations } from 'next-intl'
+
 export default function PageLayout ({ children, title }) {
-/*   const t = useTranslations('PageLayout')
- */
+  // const t = useTranslations('NavBar')
+
   return (
     <div className="relative flex grow flex-col bg-slate-850 py-36">
       <div className="absolute inset-0 overflow-hidden">
