@@ -6,9 +6,25 @@
     "title": "Ejemplo de next-intl",
     "description": "Este es un ejemplo básico que demuestra el uso de <code>next-intl</code> con el Router de Aplicaciones de Next.js. Intenta cambiar la configuración regional en la esquina superior derecha y observa cómo cambia el contenido."
   },
-  "PathnamesPage": {
+  "MapPage": {
     "title": "Nombres de ruta",
     "description": "Los nombres de ruta también están internacionalizados."
+  },
+  "FoodPage": {
+    "title": "Comida",
+    "description": "Aquí encontrarás una lista de restaurantes."
+  },
+  "BarPage": {
+    "title": "Bar",
+    "description": "Aquí encontrarás una lista de bares."
+  },
+  "EntertainmentPage": {
+    "title": "Entretenimiento",
+    "description": "Aquí encontrarás una lista de lugares de entretenimiento."
+  },
+  "TopsPage": {
+    "title": "Tops",
+    "description": "Aquí encontrarás una lista de los mejores lugares."
   },
   "PostsPage": {
     "title": "Publicaciones",
@@ -26,13 +42,14 @@
     "title": "Ejemplo de next-intl"
   },
   "LocaleSwitcher": {
-    "label": "Cambiar idioma",
-    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} es {🇪🇸 Español} other {Desconocido}}"
+    "locale": "{locale, select, en {🇺🇸 English} es {🇪🇸 Español} other {Desconocido}}"
   },
-  "Navigation": {
-    "home": "Inicio",
-    "pathnames": "Nombres de ruta",
-    "posts": "Publicaciones"
+  "NavBar": {
+    "home": "Map",
+    "food": "Comida",
+    "bar": "Bar",
+    "entertainment": "Entretenimiento",
+    "tops": "Tops"
   },
   "PageLayout": {
     "links": {

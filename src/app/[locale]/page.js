@@ -4,7 +4,7 @@ import PageLayout from '../../components/PageLayout'
 
 export default function Home ({ params: { locale } }) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations('Index')
+  const t = useTranslations('MapPage')
 
   return (
     <PageLayout title={t('title')}>

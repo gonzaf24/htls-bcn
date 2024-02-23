@@ -2,9 +2,9 @@ import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import PageLayout from '../../../components/PageLayout'
 
-export default function PostsPage ({ params: { locale } }) {
+export default function EntertainmentPage ({ params: { locale } }) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations('PostsPage')
+  const t = useTranslations('EntertainmentPage')
 
   return (
     <PageLayout title={t('title')}>

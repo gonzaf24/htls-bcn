@@ -6,9 +6,25 @@
     "title": "next-intl example",
     "description": "This is a basic example that demonstrates the usage of  with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes."
   },
-  "PathnamesPage": {
-    "title": "Pathnames",
-    "description": "The pathnames are internationalized too"
+  "MapPage": {
+    "title": "Map",
+    "description": "This page demonstrates how to use the Next.js App Router with  to internationalize pathnames and query parameters."
+  },
+  "FoodPage": {
+    "title": "Food",
+    "description": "This page demonstrates how to use the Next.js App Router with  to internationalize pathnames and query parameters."
+  },
+  "BarPage": {
+    "title": "Bar",
+    "description": "This page demonstrates how to use the Next.js App Router with  to internationalize pathnames and query parameters."
+  },
+  "EntertainmentPage": {
+    "title": "Entertainment",
+    "description": "This page demonstrates how to use the Next.js App Router with  to internationalize pathnames and query parameters."
+  },
+  "TopsPage": {
+    "title": "Tops",
+    "description": "This page demonstrates how to use the Next.js App Router with  to internationalize pathnames and query parameters."
   },
   "PostsPage": {
     "title": "Posts",
@@ -26,13 +42,14 @@
     "title": "next-intl example"
   },
   "LocaleSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} es {🇪🇸 Español} other {Unknown}}"
+    "locale": "{locale, select, en {🇺🇸 English} es {🇪🇸 Español} other {Unknown}}"
   },
-  "Navigation": {
-    "home": "Home",
-    "pathnames": "Pathnames",
-    "posts": "Posts"
+  "NavBar": {
+    "home": "Map",
+    "food": "Food",
+    "bar": "Bar",
+    "entertainment": "Entertainment",
+    "tops": "Tops"
   },
   "PageLayout": {
     "links": {

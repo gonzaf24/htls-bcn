@@ -2,10 +2,9 @@ import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import PageLayout from '../../../components/PageLayout'
 
-export default function PathnamesPage ({ params: { locale } }) {
-  // Enable static rendering
+export default function FoodPage ({ params: { locale } }) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations('PathnamesPage')
+  const t = useTranslations('FoodPage')
 
   return (
     <PageLayout title={t('title')}>

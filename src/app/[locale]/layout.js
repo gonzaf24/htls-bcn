@@ -1,6 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
 import Providers from './providers'
-import Navigation from '@/components/Navigation'
+import NavBar from '@/components/NavBar'
 
 export default async function LocaleLayout ({ children, params: { locale } }) {
   unstable_setRequestLocale(locale)
@@ -14,7 +14,7 @@ export default async function LocaleLayout ({ children, params: { locale } }) {
       <body>
         <Providers>
           <main className="text-foreground bg-background">
-            <Navigation />
+            <NavBar />
             {children}
           </main>
         </Providers>

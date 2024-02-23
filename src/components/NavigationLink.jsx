@@ -1,18 +1,15 @@
 'use client'
 
-import { useSelectedLayoutSegment } from 'next/navigation'
 import { Link } from '../navigation'
+import { useSelectedLayoutSegment } from 'next/navigation'
 
-export default function NavigationLink ({
-  href,
-  ...rest
-}) {
+export default function NavigationLink ({ href, ...rest }) {
   const selectedLayoutSegment = useSelectedLayoutSegment()
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'
   const isActive = pathname === href
 
-  const linkClassName = `text-cerise-red-500 inline-block px-2 py-3 transition-colors ${
-    isActive ? 'text-white' : 'text-gray-400 hover:text-gray-200'
+  const linkClassName = `inline-block px-2 py-3 transition-colors ${
+    isActive ? 'text-danger font-bold ' : 'text-danger hover:text-danger-600 dark:text-white dark:hover:text-danger-600'
   }`
 
   return (

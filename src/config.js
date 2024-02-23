@@ -1,16 +1,22 @@
-export const locales = ['es', 'en', 'de']
+export const locales = ['es', 'en']
 
 export const pathnames = {
   '/': '/',
-  '/pathnames': {
-    es: '/nombres-ruta',
-    en: '/pathnames',
-    de: '/pfadnamen'
+  '/bar': {
+    es: '/bar',
+    en: '/bar'
   },
-  '/posts': {
-    es: '/publicar',
-    en: '/post',
-    de: '/beitrag'
+  '/entertainment': {
+    es: '/entretenimiento',
+    en: '/entertainment'
+  },
+  '/food': {
+    es: '/comida',
+    en: '/food'
+  },
+  '/tops': {
+    es: '/tops',
+    en: '/tops'
   }
 }
 
