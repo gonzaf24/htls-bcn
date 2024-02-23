@@ -8,7 +8,7 @@
   },
   "MapPage": {
     "title": "Mapa",
-    "description": "Los nombres de ruta también están internacionalizados."
+    "description": "Aqui encontrarás un mapa interactivo con todos los sitios recomendados."
   },
   "FoodPage": {
     "title": "Comida",
@@ -26,10 +26,6 @@
     "title": "Tops",
     "description": "Aquí encontrarás una lista de los mejores lugares."
   },
-  "PostsPage": {
-    "title": "Publicaciones",
-    "description": "Aquí encontrarás una lista de publicaciones."
-  },
   "Error": {
     "title": "¡Algo salió mal!",
     "description": "<p>Lamentablemente, hemos encontrado un error.</p><p>Puedes intentar <retry>recargar la página</retry> que estabas visitando.</p>"
@@ -42,7 +38,7 @@
     "title": "Ejemplo de next-intl"
   },
   "LocaleSwitcher": {
-    "locale": "{locale, select, en {🇺🇸 English} es {🇪🇸 Español} other {Desconocido}}"
+    "locale": "{locale, select, en {English} es {Español} other {Desconocido}}"
   },
   "NavBar": {
     "/": "Map",
@@ -50,19 +46,5 @@
     "/bar": "Bar",
     "/entertainment": "Entretenimiento",
     "/tops": "Tops"
-  },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "title": "Documentos",
-        "description": "Obtén más información sobre next-intl en la documentación oficial.",
-        "href": "https://next-intl-docs.vercel.app/"
-      },
-      "source": {
-        "title": "Código fuente",
-        "description": "Explora el código fuente de este ejemplo en GitHub.",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router"
-      }
-    }
   }
 }

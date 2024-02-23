@@ -17,15 +17,14 @@ export default async function LocaleLayout ({ children, params: { locale } }) {
   }
 
   return (
-    <html className="h-full" lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="Cache-control" content="no-cache, no-store, must-revalidate"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Highlights Bcn</title>
       </head>
       <body>
-        <main className="text-foreground bg-background">
+        <main className="text-foreground bg-background flex flex-col justify-center items-center ">
           <NextIntlClientProvider locale={locale} timeZone="Europe/Vienna" now={new Date()} messages={messages}>
             <Providers >
                 <HeaderBar />

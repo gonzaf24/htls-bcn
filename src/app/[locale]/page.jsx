@@ -8,9 +8,9 @@ export default function Home ({ params: { locale } }) {
 
   return (
     <PageLayout title={t('title')}>
-      <main className="flex flex-col items-center justify-between p-24">
-        <h1 className="text-xl font-bold"> This is a deplyment TEST!</h1>
-      </main>
+      <div className="max-w-[490px]">
+        {t('description')}
+      </div>
     </PageLayout>
   )
 }

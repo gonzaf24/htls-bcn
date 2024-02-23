@@ -37,6 +37,3 @@ export default function LocaleSwitcherSelect ({
     </label>
   )
 }
-/* border: 1px solid black;
-    padding: 0px 5px;
-    border-radius: 25px; */
