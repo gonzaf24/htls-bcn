@@ -24,7 +24,7 @@ export default async function LocaleLayout ({ children, params: { locale } }) {
         <title>Highlights Bcn</title>
       </head>
       <body>
-        <main className="text-foreground bg-background flex flex-col justify-center items-center ">
+        <main className="text-foreground bg-background flex flex-col justify-center items-center">
           <NextIntlClientProvider locale={locale} timeZone="Europe/Vienna" now={new Date()} messages={messages}>
             <Providers >
                 <HeaderBar />
