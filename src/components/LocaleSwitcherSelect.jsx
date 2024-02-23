@@ -27,7 +27,7 @@ export default function LocaleSwitcherSelect ({
     <label className={'relative transition-opacity [&:disabled]:opacity-30'} >
       <p className="sr-only">{label}</p>
       <select
-        className="text-danger inline-flex appearance-none bg-transparent py-3 pl-2 pr-6 "
+        className=" text-danger inline-flex appearance-none bg-transparent py-0 px-2 border rounded-3xl border-danger dark:border-white dark:text-white"
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}
@@ -37,3 +37,6 @@ export default function LocaleSwitcherSelect ({
     </label>
   )
 }
+/* border: 1px solid black;
+    padding: 0px 5px;
+    border-radius: 25px; */

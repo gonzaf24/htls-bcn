@@ -20,6 +20,7 @@ export default async function LocaleLayout ({ children, params: { locale } }) {
     <html className="h-full" lang={locale} suppressHydrationWarning>
       <head>
         <meta charSet="UTF-8" />
+        <meta httpEquiv="Cache-control" content="no-cache, no-store, must-revalidate"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Highlights Bcn</title>
       </head>

@@ -4,7 +4,7 @@ export default function PageLayout ({ children, title }) {
   // const t = useTranslations('NavBar')
 
   return (
-    <div className="relative flex grow flex-col bg-slate-850 py-36">
+    <div className="relative flex grow flex-col bg-slate-850 py-36 h-screen h-1500">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-0 top-1 h-[20500px] w-[20500px] translate-x-[-47.5%] rounded-full bg-gradient-to-b from-slate-900 via-cyan-500" />
       </div>
