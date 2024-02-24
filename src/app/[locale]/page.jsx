@@ -2,8 +2,7 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 import TestMap from '@/components/map/TestMap'
 import PageLayout from '../../components/PageLayout'
-/* import HtlsMap from '@/components/map/HtlsMap'
-import markersData from '../fake-data' */
+import TestMap from '@/components/TestMap'
 
 export default function Home ({ params: { locale } }) {
   unstable_setRequestLocale(locale)
@@ -11,8 +10,7 @@ export default function Home ({ params: { locale } }) {
   console.log('t : ', t('title'))
 
   return (
-    <PageLayout >
-      {/* <HtlsMap dataPlaces={ markersData } /> */}
+    <PageLayout title={t('title')}>
       <TestMap />
     </PageLayout>
   )
