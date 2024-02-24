@@ -1,19 +1,8 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "next.config.js",
-        "use": "@vercel/node",
-        "config": { "zeroConfig": true }
-      },
-      {
-        "src": "api/*.js",
-        "use": "@vercel/node"
+    "build": {
+      "env": {
+        "NPM_FLAGS": "--force"
       }
-    ],
-    "installOptions": {
-      "production": true,
-      "ignoreScripts": false,
-      "force": true
     }
   }
