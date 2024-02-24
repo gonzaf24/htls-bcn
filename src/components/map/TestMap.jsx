@@ -69,17 +69,15 @@ const TestMap = () => {
                 name={'SOMA'}
                 id={1}
                 icon={{
-                  url: '/mapLogo.png',
-                  anchor: new window.google.maps.Point(32, 32),
-                  scaledSize: new window.google.maps.Size(64, 64)
+                  url: '/icons/AvocadoIcon.svg',
+                  anchor: new window.google.maps.Point(15, 15),
+                  scaledSize: new window.google.maps.Size(30, 30)
                 }}
            />
 
         </Map>
   )
 }
-
-console.log('process.env.NEXT_PUBLIC_HTLSBCN_MAP_API_KEY : ', process.env.NEXT_PUBLIC_HTLSBCN_MAP_API_KEY)
 
 export default GoogleApiWrapper({
   apiKey: process.env.NEXT_PUBLIC_HTLSBCN_MAP_API_KEY,
