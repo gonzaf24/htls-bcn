@@ -32,7 +32,7 @@ const customStyles = [
 ]
 
 const LoadingContainer = (props) => (
-    <div>Fancy loading container!</div>
+    <div>Cargango el mapa .... wait men! </div>
 )
 
 const TestMap = () => {

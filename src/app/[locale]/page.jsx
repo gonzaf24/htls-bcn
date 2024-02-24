@@ -2,7 +2,6 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 import TestMap from '@/components/map/TestMap'
 import PageLayout from '../../components/PageLayout'
-import TestMap from '@/components/TestMap'
 
 export default function Home ({ params: { locale } }) {
   unstable_setRequestLocale(locale)
