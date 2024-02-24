@@ -3,8 +3,8 @@
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 
 const mapStyles = {
-  width: '90%',
-  height: '80%'
+  width: '100%',
+  height: '100%'
 }
 
 const customStyles = [
@@ -31,11 +31,7 @@ const customStyles = [
   }
 ]
 
-const LoadingContainer = (props) => (
-    <div>Fancy loading container!</div>
-)
-
-const TestMap = () => {
+const TestMap = (props) => {
   return (
         // The <Map></Map> need the following props
         // initialCenter={} will be the center on the Map
@@ -70,8 +66,8 @@ const TestMap = () => {
                 id={1}
                 icon={{
                   url: '/icons/AvocadoIcon.svg',
-                  anchor: new window.google.maps.Point(15, 15),
-                  scaledSize: new window.google.maps.Size(30, 30)
+                  anchor: new props.google.maps.Point(15, 15),
+                  scaledSize: new props.google.maps.Size(30, 30)
                 }}
            />
 
@@ -79,7 +75,11 @@ const TestMap = () => {
   )
 }
 
+// Exporta el componente TestMap al final del archivo
+export { TestMap }
+
+// Envuelve el componente TestMap con GoogleApiWrapper en el lugar donde lo estés importando
 export default GoogleApiWrapper({
   apiKey: process.env.NEXT_PUBLIC_HTLSBCN_MAP_API_KEY,
-  LoadingContainer
+  LoadingContainer: () => <div>Fancy loading container!</div>
 })(TestMap)
