@@ -6,8 +6,8 @@ import NavigationLink from '../NavigationLink'
 
 export default function HtlsMapMarkerDescription ({ children, isOpen, onClose, marker }) {
   // const t = useTranslations('NavBar')
-  const googleMapMarkerLink = marker?.googleMapsLink
-  const mapMarkerDescriptionClassNames = classNames(styles.MapMarkerDescription, { [styles.IsOpen]: isOpen })
+/*   const googleMapMarkerLink = marker?.googleMapsLink
+ */ const mapMarkerDescriptionClassNames = classNames(styles.MapMarkerDescription, { [styles.IsOpen]: isOpen })
 
   return (
       <div className={mapMarkerDescriptionClassNames}>
