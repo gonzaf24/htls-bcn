@@ -9,7 +9,7 @@ export default function Home ({ params: { locale } }) {
   const t = useTranslations('MapPage')
   return (
     <PageLayoutMap title={t('title')}>
-      <div className="relative h-[calc(100%_-_48px)]">
+      <div className="relative  h-[calc(100vh_-_120px)]">
           <TestMap locale={locale} places={myMarkersPlaces}/>
       </div>
     </PageLayoutMap>
