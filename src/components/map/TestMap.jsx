@@ -1,6 +1,7 @@
 'use client'
-
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
+import styles from './TestMap.module.css'
+import { useEffect, useState } from 'react'
 
 const mapStyles = {
   width: '100%',
@@ -31,55 +32,72 @@ const customStyles = [
   }
 ]
 
-const TestMap = (props) => {
-  return (
-        // The <Map></Map> need the following props
-        // initialCenter={} will be the center on the Map
-        <Map
-            google={window.google}
-            zoom={13}
-            style={mapStyles}
-            initialCenter={
-                {
-                  lat: 41.38879,
-                  lng: 2.15899
-                }
-            }
-            disableDefaultUI={true}
-            zoomControl={false}
-            clickableIcons={false}
-            keyboardShortcuts={false}
-            mapTypeControl={false}
-            streetViewControl={false}
-            fullscreenControl={false}
-            styles={customStyles}
-        >
-           <Marker
-              position={
-                  {
-                    lat: 41.38879,
-                    lng: 2.16899
-                  }
-              }
-              title={'The marker`s title will appear as a tooltip.'}
-                name={'SOMA'}
-                id={1}
-                icon={{
-                  url: '/icons/AvocadoIcon.svg',
-                  anchor: new props.google.maps.Point(15, 15),
-                  scaledSize: new props.google.maps.Size(30, 30)
-                }}
-           />
+const TestMap = ({ google, locale, loaded, places = [] }) => {
+  const [mounted, setMounted] = useState(false)
 
-        </Map>
+  useEffect(() => {
+    if (google && locale && loaded && !mounted) {
+      setMounted(true)
+    }
+  }, [google, loaded, locale, mounted])
+
+  return (
+    mounted && (
+      <Map
+        google={window.google}
+        zoom={13}
+        maxZoom={17}
+        minZoom={13}
+        style={mapStyles}
+        initialCenter={{
+          lat: 41.38879,
+          lng: 2.15899
+        }}
+        disableDefaultUI={true}
+        zoomControl={false}
+        clickableIcons={false}
+        keyboardShortcuts={false}
+        mapTypeControl={false}
+        streetViewControl={false}
+        fullscreenControl={false}
+        styles={customStyles}
+      >
+        { places.map((place) => {
+          return <Marker
+            key={place.id}
+            position={{
+              lat: place.lat,
+              lng: place.lng
+            }}
+            title={place.name}
+            name={place.name}
+            id={place.id}
+            icon={{
+              url: place.icon,
+              anchor: new window.google.maps.Point(15, 15),
+              scaledSize: new window.google.maps.Size(25, 25)
+            }}
+          />
+        })
+        }
+      </Map>
+    )
   )
 }
 
-// Exporta el componente TestMap al final del archivo
 export { TestMap }
 
-// Envuelve el componente TestMap con GoogleApiWrapper en el lugar donde lo estés importando
-export default GoogleApiWrapper({
-  apiKey: process.env.NEXT_PUBLIC_HTLSBCN_MAP_API_KEY,
-  LoadingContainer: () => <div>Fancy loading container!</div>
-})(TestMap)
+export default GoogleApiWrapper(
+  (props) => {
+    return ({
+      apiKey: process.env.NEXT_PUBLIC_HTLSBCN_MAP_API_KEY,
+      language: props.locale,
+      LoadingContainer: () => (
+        <div className='h-[80%] w-full flex flex-col gap-y-10 justify-items-center items-center justify-center'>
+          <div className={styles.loader}/>
+          <div className={styles.loaderBar}/>
+        </div>
+      )
+    })
+  }
+)(TestMap)
