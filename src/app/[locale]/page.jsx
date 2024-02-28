@@ -3,12 +3,12 @@ import HtlsMap from '@/components/map/HtlsMap'
 import PageLayoutMap from '@/components/PageLayoutMap'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
-export default function Home ({ params: { locale } }) {
+export default async function Home ({ params: { locale } }) {
   unstable_setRequestLocale(locale)
 
   return (
       <PageLayoutMap>
-          <div className="flex w-1/2 relative shrink h-[calc(100vh_-_180px)]">
+          <div className="relative h-[calc(100vh_-_180px)]">
             <HtlsMap locale={locale} places={myMarkersPlaces} />
           </div>
       </PageLayoutMap>
