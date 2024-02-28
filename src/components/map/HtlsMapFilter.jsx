@@ -40,12 +40,6 @@ export default function HtlsMapFilter ({ filter, checked, onFilterChange }) {
   const colorClass = checked ? getColorClass(filter.color) : 'bg-gray-300'
   const textColorClass = checked ? getTextColorClass(filter.color) : 'text-gray-300'
 
-  console.log('colorClass', colorClass)
-  console.log('textColorClass', textColorClass)
-  console.log('checked', checked)
-
-  console.log('textColorClass', textColorClass)
-
   return <div className="flex flex-col justify-start items-center gap-2 p-2">
     <h6 className="text-white text-xs">{t(filter.label)}</h6>
     <label htmlFor={`${filter.label}-ID`} className={`relative h-8 w-14 cursor-pointer rounded-full transition ${colorClass}`}>
