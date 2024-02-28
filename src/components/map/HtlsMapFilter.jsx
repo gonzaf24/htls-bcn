@@ -1,27 +1,63 @@
 'use client'
 import { useTranslations } from 'next-intl'
 
-export default function HtlsMapFilter ({ filter, checked }) {
-  console.log('filteraaaaa', filter)
+// Determina la clase de color en función del valor de filter.color
+const getColorClass = (color) => {
+  switch (color) {
+    case 'red':
+      return 'bg-red-500'
+    case 'blue':
+      return 'bg-indigo-500'
+    case 'green':
+      return 'bg-green-500'
+    case 'yellow':
+      return 'bg-yellow-500'
+      // Agrega más casos según sea necesario para otros colores
+    default:
+      return 'bg-gray-300' // Color por defecto
+  }
+}
+
+const getTextColorClass = (color) => {
+  switch (color) {
+    case 'red':
+      return 'text-red-500'
+    case 'blue':
+      return 'text-indigo-500'
+    case 'green':
+      return 'text-green-500'
+    case 'yellow':
+      return 'text-yellow-500'
+      // Agrega más casos según sea necesario para otros colores
+    default:
+      return 'text-gray-300' // Color por defecto
+  }
+}
+
+export default function HtlsMapFilter ({ filter, checked, onFilterChange }) {
   const t = useTranslations('NavBar')
 
-  const handleChange = (e) => {
-    console.log('cambio', e.target.checked, ' and id: ', e.target.id)
-  }
+  const colorClass = checked ? getColorClass(filter.color) : 'bg-gray-300'
+  const textColorClass = checked ? getTextColorClass(filter.color) : 'text-gray-300'
 
-  console.log('es qui el color : ', `bg-${filter.color}-500`)
+  console.log('colorClass', colorClass)
+  console.log('textColorClass', textColorClass)
+  console.log('checked', checked)
+
+  console.log('textColorClass', textColorClass)
 
   return <div className="flex flex-col justify-start items-center gap-2 p-2">
     <h6 className="text-white text-xs">{t(filter.label)}</h6>
-    <label htmlFor={`${filter.label}-ID`} className={`relative h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] ${checked ? `bg-${filter.color}-500` : ''}`}>
+    <label htmlFor={`${filter.label}-ID`} className={`relative h-8 w-14 cursor-pointer rounded-full transition ${colorClass}`}>
         <input
-            onChange={handleChange}
+            checked={checked}
+            onChange={onFilterChange}
             type="checkbox"
             id={`${filter.label}-ID`}
             className="peer sr-only [&:checked_+_span_svg[data-checked-icon]]:block [&:checked_+_span_svg[data-unchecked-icon]]:hidden"
         />
 
-        <span className={`absolute inset-y-0 start-0 z-10 m-1 inline-flex size-6 items-center justify-center rounded-full bg-white text-gray-400 transition-all peer-checked:start-6 peer-checked:text-${filter.color}-600 `}>
+        <span className={`absolute inset-y-0 start-0 z-10 m-1 inline-flex size-6 items-center justify-center rounded-full bg-white text-gray-400 transition-all peer-checked:start-6 ${textColorClass}`}>
             <svg
             data-unchecked-icon
             xmlns="http://www.w3.org/2000/svg"
