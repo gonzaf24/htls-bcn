@@ -1,17 +1,23 @@
-import { unstable_setRequestLocale } from 'next-intl/server'
-import { useTranslations } from 'next-intl'
-import TestMap from '@/components/map/TestMap'
-import PageLayoutMap from '@/components/PageLayoutMap'
+'use client'
+
 import myMarkersPlaces from '@/components/map/fake_data'
+import HtlsMap from '@/components/map/HtlsMap'
+import PageLayoutMap from '@/components/PageLayoutMap'
+import { useEffect, useState } from 'react'
 
 export default function Home ({ params: { locale } }) {
-  unstable_setRequestLocale(locale)
-  const t = useTranslations('MapPage')
+  const [loaded, setLoaded] = useState(false)
+
+  // Una vez que el componente ha sido montado, actualiza el estado
+  useEffect(() => {
+    setLoaded(true)
+  }, [])
+
   return (
-    <PageLayoutMap title={t('title')}>
-      <div className="relative  h-[calc(100vh_-_120px)]">
-          <TestMap locale={locale} places={myMarkersPlaces}/>
-      </div>
-    </PageLayoutMap>
+      <PageLayoutMap>
+          <div className="relative  h-[calc(100vh_-_180px)]">
+            {loaded && <HtlsMap locale={locale} places={myMarkersPlaces} />}
+          </div>
+      </PageLayoutMap>
   )
 }

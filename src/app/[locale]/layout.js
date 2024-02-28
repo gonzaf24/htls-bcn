@@ -1,6 +1,7 @@
 import Providers from './providers'
 import HeaderBar from '@/components/HeaderBar'
 import { notFound } from 'next/navigation'
+import { monstserrat } from './fonts'
 
 export function generateStaticParams () {
   return [{ locale: 'en' }, { locale: 'es' }]
@@ -22,13 +23,13 @@ export default async function LocaleLayout ({ children, params: { locale } }) {
         <meta httpEquiv="Cache-control" content="no-cache, no-store, must-revalidate"/>
         <title>Highlights Bcn</title>
       </head>
-      <body>
-        <main className="text-foreground bg-background flex flex-col justify-center items-center">
+      <body className={ `${monstserrat.className} `} >
           <Providers locale={locale} messages={messages} >
+            <main>
               <HeaderBar />
               {children}
+            </main>
           </Providers>
-        </main>
       </body>
     </html>
   )
