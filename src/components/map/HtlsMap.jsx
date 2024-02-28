@@ -1,7 +1,8 @@
 'use client'
+import getRequestApiTestData from '@/app/lib/data'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 import { useTranslations } from 'next-intl'
-import styles from './HtlsMap.module.css'
+import { HtlsMapLoading } from './HtlsMapLoading'
 
 const customStyles = [
   {
@@ -27,9 +28,11 @@ const customStyles = [
   }
 ]
 
-const HtlsMap = ({ google, places }) => {
+const HtlsMap = async ({ google, places }) => {
   const t = useTranslations('MapPage')
   console.log('t', t('title'))
+
+  await getRequestApiTestData()
 
   return (
     <Map
@@ -80,12 +83,7 @@ export default GoogleApiWrapper(
     return ({
       apiKey: process.env.NEXT_PUBLIC_HTLSBCN_MAP_API_KEY,
       language: props.locale,
-      LoadingContainer: () => (
-        <div className='h-[80%] w-full flex flex-col gap-y-10 justify-items-center items-center justify-center'>
-          <div className={styles.loader}/>
-          <div className={styles.loaderBar}/>
-        </div>
-      )
+      LoadingContainer: () => <HtlsMapLoading/>
     })
   }
 )(HtlsMap)
