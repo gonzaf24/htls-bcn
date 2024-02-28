@@ -10,10 +10,21 @@ export function generateStaticParams () {
 }
 
 export async function generateMetadata ({ params: { locale } }) {
+  // Obtener las traducciones según el idioma
   const t = await getTranslations({ locale, namespace: 'LocaleLayout' })
 
+  // Metadatos para SEO
   return {
-    title: t('title')
+    title: t('title'),
+    description: t('title'),
+    keywords: t('title'),
+    author: t('title'),
+    robots: 'index, follow',
+    language: locale,
+    canonicalUrl: 'https://example.com/pagina-ejemplo',
+    ogImage: 'https://example.com/imagen.png',
+    twitterCardType: 'summary_large_image',
+    twitterImage: 'https://example.com/imagen.png'
   }
 }
 
