@@ -8,7 +8,7 @@ export default function Home ({ params: { locale } }) {
 
   return (
       <PageLayoutMap>
-          <div className="flex relative shrink h-[calc(100vh_-_180px)]">
+          <div className="flex w-1/2 relative shrink h-[calc(100vh_-_180px)]">
             <HtlsMap locale={locale} places={myMarkersPlaces} />
           </div>
       </PageLayoutMap>
