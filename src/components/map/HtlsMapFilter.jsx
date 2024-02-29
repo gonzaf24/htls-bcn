@@ -1,48 +1,30 @@
 'use client'
+import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
-// Determina la clase de color en función del valor de filter.color
-const getColorClass = (color) => {
-  switch (color) {
-    case 'red':
-      return 'bg-red-500'
-    case 'blue':
-      return 'bg-indigo-500'
-    case 'green':
-      return 'bg-green-500'
-    case 'yellow':
-      return 'bg-yellow-500'
-      // Agrega más casos según sea necesario para otros colores
-    default:
-      return 'bg-gray-300' // Color por defecto
-  }
+const colorClasses = {
+  red: 'bg-red-500',
+  indigo: 'bg-indigo-500',
+  green: 'bg-green-500',
+  yellow: 'bg-yellow-500'
 }
 
-const getTextColorClass = (color) => {
-  switch (color) {
-    case 'red':
-      return 'text-red-500'
-    case 'blue':
-      return 'text-indigo-500'
-    case 'green':
-      return 'text-green-500'
-    case 'yellow':
-      return 'text-yellow-500'
-      // Agrega más casos según sea necesario para otros colores
-    default:
-      return 'text-gray-300' // Color por defecto
-  }
+const textColorClasses = {
+  red: 'text-red-500',
+  indigo: 'text-indigo-500',
+  green: 'text-green-500',
+  yellow: 'text-yellow-500'
 }
 
 export default function HtlsMapFilter ({ filter, checked, onFilterChange }) {
   const t = useTranslations('NavBar')
 
-  const colorClass = checked ? getColorClass(filter.color) : 'bg-gray-300'
-  const textColorClass = getTextColorClass(filter.color)
+  const colorClass = colorClasses[filter.color] || 'bg-gray-300'
+  const textColorClass = textColorClasses[filter.color] || 'text-gray-400'
 
   return <div className="flex flex-col justify-start items-start gap-2 p-2">
             <h6 className="text-white text-xs pl-3">{t(filter.label)}</h6>
-            <label htmlFor={`${filter.label}-ID`} className={`relative h-8 w-14 cursor-pointer rounded-full transition ${colorClass}`}>
+            <label htmlFor={`${filter.label}-ID`} className={clsx('relative h-8 w-14 cursor-pointer rounded-full transition', checked ? colorClass : 'bg-gray-300')}>
                 <input
                     checked={checked}
                     onChange={onFilterChange}
@@ -51,8 +33,8 @@ export default function HtlsMapFilter ({ filter, checked, onFilterChange }) {
                     className="peer sr-only [&:checked_+_span_svg[data-checked-icon]]:block [&:checked_+_span_svg[data-unchecked-icon]]:hidden"
                 />
 
-                <span className={`absolute inset-y-0 start-0 z-10 m-1 inline-flex size-6 items-center justify-center rounded-full bg-white text-gray-400 transition-all peer-checked:start-6 ${textColorClass}`}>
-                    <svg
+                <span className={clsx('absolute inset-y-0 start-0 z-10 m-1 inline-flex size-6 items-center justify-center rounded-full bg-white transition-all peer-checked:start-6', textColorClass)}>
+                  <svg
                     data-unchecked-icon
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"

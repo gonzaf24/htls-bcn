@@ -12,7 +12,7 @@ export const mapFilters = [
   {
     id: 3,
     label: '/tops',
-    color: 'blue'
+    color: 'indigo'
   },
   {
     id: 4,

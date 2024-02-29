@@ -3,16 +3,18 @@ import HtlsMap from '@/components/map/HtlsMap'
 import PageLayoutMap from '@/components/PageLayoutMap'
 import { HtlsMapLoading } from '@/components/map/HtlsMapLoading'
 import { Suspense } from 'react'
-import { unstable_setRequestLocale } from 'next-intl/server'
-import HtlsMapFiltersServer from '@/components/map/HtlsMapFiltersServer'
+/* import { unstable_setRequestLocale } from 'next-intl/server'
+ */import HtlsMapFiltersServer from '@/components/map/HtlsMapFiltersServer'
 import HtlsMapFiltersSkeleton from '@/components/map/HtlsMapFiltersSkeleton'
-// import { useTranslations } from 'next-intl'
+/* import getRequestApiTestData from '../lib/data'
+ */// import { useTranslations } from 'next-intl'
 
-export default function Home ({ params: { locale } }) {
+export default async function Home ({ params: { locale } }) {
   // Enable static rendering
-  unstable_setRequestLocale(locale)
+/*   unstable_setRequestLocale(locale) */
 
   // const t = useTranslations('PathnamesPage')
+  // await getRequestApiTestData('Filters')
 
   return (
       <PageLayoutMap locale={locale}>
