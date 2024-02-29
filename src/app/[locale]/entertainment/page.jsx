@@ -7,7 +7,7 @@ export default function EntertainmentPage ({ params: { locale } }) {
   const t = useTranslations('EntertainmentPage')
 
   return (
-    <PageLayout title={t('title')}>
+    <PageLayout title={t('title')} locale={locale}>
       <div className="max-w-[490px]">
         {t('description')}
       </div>

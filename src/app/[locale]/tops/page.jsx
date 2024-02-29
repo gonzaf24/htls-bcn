@@ -7,7 +7,7 @@ export default function TopsPage ({ params: { locale } }) {
   const t = useTranslations('TopsPage')
 
   return (
-    <PageLayout title={t('title')}>
+    <PageLayout title={t('title')} locale={locale}>
       <div className="max-w-[490px]">
         {t('description')}
       </div>
